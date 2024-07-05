@@ -5,7 +5,7 @@ body{
 }
 #container {
     background-color: aliceblue;
-    width: 85vw;
+    width: 50vw;
     height: 85vh;
     position: absolute;
     top:0;
@@ -18,5 +18,5 @@ body{
 
 #boxes{
     display: flex;
-    
+
 }
