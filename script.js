@@ -28,17 +28,27 @@ if(boxes.hasChildNodes()){
       }
 }
 
+
 for(let i=0; i<userDim; i++){
    for(let j=0; j<userDim; j++){
    //controls individual boxes
     var box = document.createElement('div');
+    if(userDim > 50){
+      box.style.flexBasis = "1%";
+   } 
+   else if(userDim <= 50){
+      if(userDim < 10){
+         box.style.flex = "50%";
+      }
+      box.style.flexBasis = "5.9%";
+   }
     box.className = "box";
-    box.style.border="1px solid lightgrey";
-    box.style.flexBasis = "6%";
+    //box.style.border="1px solid lightgrey";
     boxes.appendChild(box);
    }
 }
 
+const color = ["tomato", "lightgreen", "lightblue"];
 //determines all the boxes behavior
 let drawBox = document.getElementsByClassName("box");
 for(let i=0; i<drawBox.length; i++){
@@ -50,7 +60,7 @@ for(let i=0; i<drawBox.length; i++){
 
    
 });
-let clickEvent = new Event('click');
-btn.dispatchEvent(clickEvent);
+// let clickEvent = new Event('click');
+// btn.dispatchEvent(clickEvent);
 
 document.body.appendChild(btn);
