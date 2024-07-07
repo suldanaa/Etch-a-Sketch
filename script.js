@@ -6,6 +6,15 @@ btn.style.fontSize = "24px";
 btn.style.marginLeft = "40%"
 btn.style.marginTop = ".5%";
 
+function getRandomInt(max) {
+   return Math.floor(Math.random() * max);
+ }
+
+function randomizedColor(){
+   const colors = ["tomato", "lightorange", "yellow", "lightgreen", "lightblue", "indigo", "violet", "black", "grey", "lightpink"];
+   return colors[getRandomInt(colors.length)];
+}
+
 btn.addEventListener('click', ()=>{
 
    userDim = prompt("Enter desired dimensions (1-100)");
@@ -28,7 +37,6 @@ if(boxes.hasChildNodes()){
       }
 }
 
-
 for(let i=0; i<userDim; i++){
    for(let j=0; j<userDim; j++){
    //controls individual boxes
@@ -48,19 +56,17 @@ for(let i=0; i<userDim; i++){
    }
 }
 
-const color = ["tomato", "lightgreen", "lightblue"];
 //determines all the boxes behavior
 let drawBox = document.getElementsByClassName("box");
 for(let i=0; i<drawBox.length; i++){
    drawBox[i].addEventListener("mouseover", ()=>{
-      drawBox[i].style.backgroundColor = "grey";
+      drawBox[i].style.backgroundColor = randomizedColor();
    });
 }
-
-
-   
 });
-// let clickEvent = new Event('click');
-// btn.dispatchEvent(clickEvent);
+
+let clickEvent = new Event('click');
+btn.dispatchEvent(clickEvent);
 
 document.body.appendChild(btn);
+
