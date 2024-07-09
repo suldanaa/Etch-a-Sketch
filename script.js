@@ -6,7 +6,11 @@ btn.style.fontSize = "20px";
 btn.style.marginLeft = "40%"
 btn.style.marginTop = ".1%";
 
+const controls = document.getElementById("controls");
+const dimSlider = document.getElementById("dimSlider");
+
 const checkBox = document.getElementById('checkbox');
+
 
 function getRandomInt(max) {
    return Math.floor(Math.random() * max);
@@ -29,8 +33,6 @@ function randomizedColor(){
    boxes.style.flexWrap = "wrap";
    boxes.style.position = "relative";
    boxes.style.marginLeft = "7px";
-   boxes.style.height = "100%";
-   boxes.style.width = "100%";
    
    //removes the graph if it's there
    if(boxes.hasChildNodes()){
@@ -43,6 +45,7 @@ function randomizedColor(){
       for(let j=0; j<userDim; j++){
       //controls individual boxes
        var box = document.createElement('div');
+       box.style.backgroundColor = "aliceblue";
        if(userDim > 50){
          box.style.flexBasis = "1%";
       } 
@@ -53,7 +56,7 @@ function randomizedColor(){
          box.style.flexBasis = "5.9%";
       }
        box.className = "box";
-       //box.style.border="1px solid lightgrey";
+       box.style.border="1px solid lightgrey";
        boxes.appendChild(box);
       }
    }
@@ -71,8 +74,8 @@ function randomizedColor(){
    }
    });
    
-   let clickEvent = new Event('click');
-   btn.dispatchEvent(clickEvent);
+   // let clickEvent = new Event('click');
+   // btn.dispatchEvent(clickEvent);
    
    document.body.appendChild(btn);
 
